@@ -1,29 +1,45 @@
 // -- EXERCICIO 1 ---
-class Ingresso {
+abstract class Ingresso {
     protected valorReais: number;
+
+    get buscarValor(): number {
+        return this.valorReais
+    }
 
     constructor() {
         this.valorReais = 50;
     };
 
-    imprimeValorNormal(): void {};
-};
-
-export class IngressoNormal extends Ingresso {
-    imprimeValorNormal() {
-        console.log(`O valor do Ingresso Normal é de R$${this.valorReais}`);
+    imprimeValorNormal(): void {
+        console.log(`O valor do Ingresso é de R$${this.valorReais.toFixed(2)}`);
     };
 };
 
+export class IngressoNormal extends Ingresso {};
+
 export class IngressoVip extends Ingresso {
+    private valorAdicional: number;
+
+    constructor(){
+        super();
+        this.valorAdicional = 50;
+    }
+
     imprimeValorNormal() {
-        console.log(`O valor do Ingresso Vip é de R$${(this.valorReais + 50).toFixed(2)}`);
+        console.log(`O valor do Ingresso Vip é de R$${(this.valorReais + this.valorAdicional).toFixed(2)}`);
     };
 };
 
 export class IngressoCamarote extends Ingresso {
+    private valorAdicional: number;
+
+    constructor(){
+        super();
+        this.valorAdicional = 100;
+    }
+
     imprimeValorNormal() {
-        console.log(`O valor do Ingresso Camarote é de R$${(this.valorReais + 100).toFixed(2)}`);
+        console.log(`O valor do Ingresso Camarote é de R$${(this.valorReais + this.valorAdicional).toFixed(2)}`);
     };
 }
 
