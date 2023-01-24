@@ -41,10 +41,10 @@ export class IngressoCamarote extends Ingresso {
     imprimeValorNormal() {
         console.log(`O valor do Ingresso Camarote é de R$${(this.valorReais + this.valorAdicional).toFixed(2)}`);
     };
-}
+};
 
 // -- EXERCICIO 2 ---
-class Imovel {
+abstract class Imovel {
     protected endereco: string;
     protected preco: number;
 
@@ -53,23 +53,37 @@ class Imovel {
         this.preco = preco;        
     };
 
-    mostrarPreco(valor: number): void {}; 
+    mostrarPreco(): void {}; 
 };
 
 export class ImovelNovo extends Imovel {
-    mostrarPreco(adicional: number): void {
-        console.log(`O valor do Imovel Novo é de R$${(this.preco + adicional).toFixed(2)}`);
+    protected valorAdicional: number;
+
+    constructor(endereco: string, preco: number, valorAdicional: number) {
+        super(endereco, preco)
+        this.valorAdicional = valorAdicional;
+    };
+
+    mostrarPreco(): void {
+        console.log(`O valor do Imovel Novo é de R$${(this.preco + this.valorAdicional).toFixed(2)}`);
     };
 };
 
 export class ImovelVelho extends Imovel {
-    mostrarPreco(desconto: number): void {
-        console.log(`O valor do Imovel Velho é de R$${(this.preco - desconto).toFixed(2)}`);
+    protected valorAdicional: number;
+
+    constructor(endereco: string, preco: number, valorAdicional: number) {
+        super(endereco, preco)
+        this.valorAdicional = valorAdicional;
+    };
+
+    mostrarPreco(): void {
+        console.log(`O valor do Imovel Velho é de R$${(this.preco - this.valorAdicional).toFixed(2)}`);
     };
 };
 
 // -- EXERCICIO 3 ---
-class Animal {
+abstract class Animal {
     protected especicie: string;
     protected cor: string;
     protected altura: number;

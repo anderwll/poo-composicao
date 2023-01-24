@@ -6,8 +6,8 @@ const ing2 = new IngressoVip().imprimeValorNormal();
 const ing3 = new IngressoCamarote().imprimeValorNormal();
 
 // -- EXERCICIO 2 ---
-const imovel1 = new ImovelNovo('Rua Xingu, 333 - São Bento, BG', 100000).mostrarPreco(2000); // ADICIONAL DO IMOVEL NOVO
-const imovel2 = new ImovelVelho('Rua Candelária, 222 - Cidade Alta, BG', 80000).mostrarPreco(2000); // DESCONTO DO IMOVEL VELHO
+const imovel1 = new ImovelNovo('Rua Xingu, 333 - São Bento, BG', 100000, 200).mostrarPreco(); // ADICIONAL DO IMOVEL NOVO
+const imovel2 = new ImovelVelho('Rua Candelária, 222 - Cidade Alta, BG', 80000, 200).mostrarPreco(); // DESCONTO DO IMOVEL VELHO
 
 // -- EXERCICIO 3 ---
 const cachorro = new Chachorro('Dobermann', 'Marrom/Preto', 1, 4, 1);
