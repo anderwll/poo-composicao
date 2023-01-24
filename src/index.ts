@@ -1,4 +1,4 @@
-import { Cavalo, Chachorro, Gato, ImovelNovo, ImovelVelho, IngressoCamarote, IngressoNormal, IngressoVip, Pessoa, Universidade } from "./class";
+import { Cavalo, Chachorro, Departamento, Gato, ImovelNovo, ImovelVelho, IngressoCamarote, IngressoNormal, IngressoVip, Pessoa, Universidade } from "./class";
 
 // -- EXERCICIO 1 ---
 const ing1 = new IngressoNormal().imprimeValorNormal();
@@ -33,8 +33,15 @@ pessoa2.cadastrarUniversidade(harvard);
 harvard.adicionarFuncionario(pessoa1);
 harvard.adicionarFuncionario(pessoa2);
 
-pessoa1.mostrar();
-pessoa2.mostrar();
+// pessoa1.mostrar();
+// pessoa2.mostrar();
 
 // -- EXERCICIO 5 ---
+const departamento1 = new Departamento('RH');
+
+pessoa1.cadastrarDepartamento(departamento1);
+pessoa2.cadastrarDepartamento(departamento1);
+
+pessoa1.mostrar();
+pessoa2.mostrar();
 

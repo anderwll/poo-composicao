@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Pessoa = exports.Universidade = exports.Gato = exports.Cavalo = exports.Chachorro = exports.ImovelVelho = exports.ImovelNovo = exports.IngressoCamarote = exports.IngressoVip = exports.IngressoNormal = void 0;
+exports.Departamento = exports.Pessoa = exports.Universidade = exports.Gato = exports.Cavalo = exports.Chachorro = exports.ImovelVelho = exports.ImovelNovo = exports.IngressoCamarote = exports.IngressoVip = exports.IngressoNormal = void 0;
 // -- EXERCICIO 1 ---
 class Ingresso {
     constructor() {
@@ -117,11 +117,17 @@ class Universidade {
         this.nome = nome;
         this.local = local;
         this.funcionarios = [];
+        this.departamentos = [];
     }
     ;
     adicionarFuncionario(novaPessoa) {
         this.funcionarios.push(novaPessoa);
-        console.log(`Funcionário novo cadastrado!`);
+        console.log(`Funcionário novo cadastrado! 🎉`);
+    }
+    ;
+    adicionarDepartamento(novoDepartamento) {
+        this.departamentos.push(novoDepartamento);
+        console.log(`Departamento adicionado com sucesso! 🎉`);
     }
 }
 exports.Universidade = Universidade;
@@ -134,16 +140,31 @@ class Pessoa {
     ;
     cadastrarUniversidade(novaUniversidade) {
         this.universidade = novaUniversidade;
-        console.log('Universidade cadatrada!');
+        console.log('Universidade cadatrada! 🎉');
+    }
+    cadastrarDepartamento(novoDepartamento) {
+        this.departamento = novoDepartamento;
+        console.log('Departamento cadatrado! 🎉');
     }
     mostrar() {
-        var _a;
+        var _a, _b;
         console.log(`Nome: ${this.nome}`);
         console.log(`Data de Nascimento: ${this.dataNascimento}`);
         console.log(`Universidade: ${(_a = this.universidade) === null || _a === void 0 ? void 0 : _a.buscarNome}`);
+        console.log(`Departamento: ${(_b = this.departamento) === null || _b === void 0 ? void 0 : _b.buscarNome}`);
     }
     ;
 }
 exports.Pessoa = Pessoa;
 ;
 // -- EXERCICIO 5 ---
+class Departamento {
+    get buscarNome() {
+        return this.nome;
+    }
+    constructor(nome) {
+        this.nome = nome;
+    }
+    ;
+}
+exports.Departamento = Departamento;

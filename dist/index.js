@@ -29,6 +29,11 @@ pessoa1.cadastrarUniversidade(harvard);
 pessoa2.cadastrarUniversidade(harvard);
 harvard.adicionarFuncionario(pessoa1);
 harvard.adicionarFuncionario(pessoa2);
+// pessoa1.mostrar();
+// pessoa2.mostrar();
+// -- EXERCICIO 5 ---
+const departamento1 = new class_1.Departamento('RH');
+pessoa1.cadastrarDepartamento(departamento1);
+pessoa2.cadastrarDepartamento(departamento1);
 pessoa1.mostrar();
 pessoa2.mostrar();
-// -- EXERCICIO 5 ---

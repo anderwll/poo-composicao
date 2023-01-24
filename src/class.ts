@@ -104,23 +104,29 @@ export class Gato extends Animal {
 export class Universidade {
     private nome: string;
     private local: string;
-    private funcionarios: Array<Pessoa>
-
+    private funcionarios: Array<Pessoa>;
+    private departamentos: Array<Departamento>; 
     
-    get buscarNome() : string {
+    get buscarNome() {
         return this.nome
     };
     
-
     constructor(nome: string, local: string){
         this.nome = nome;
         this.local = local;
         this.funcionarios = [];
+        this.departamentos = [];
     };
 
     adicionarFuncionario(novaPessoa: Pessoa) {
         this.funcionarios.push(novaPessoa);
-        console.log(`Funcionário novo cadastrado!`);  
+        console.log(`Funcionário novo cadastrado! 🎉`);  
+    };
+
+    adicionarDepartamento(novoDepartamento: Departamento) {
+        this.departamentos.push(novoDepartamento);
+        console.log(`Departamento adicionado com sucesso! 🎉`);
+        
     }
 };
 
@@ -128,6 +134,7 @@ export class Pessoa {
     private nome: string;
     private dataNascimento: string;
     private universidade?: Universidade
+    private departamento?: Departamento
 
     constructor(nome: string, dataNascimento: string){
         this.nome = nome;
@@ -136,14 +143,31 @@ export class Pessoa {
 
     cadastrarUniversidade(novaUniversidade: Universidade) {
         this.universidade = novaUniversidade;
-        console.log('Universidade cadatrada!'); 
+        console.log('Universidade cadatrada! 🎉'); 
+    }
+
+    cadastrarDepartamento(novoDepartamento: Departamento) {
+        this.departamento = novoDepartamento;
+        console.log('Departamento cadatrado! 🎉'); 
     }
 
     mostrar() {
         console.log(`Nome: ${this.nome}`);
         console.log(`Data de Nascimento: ${this.dataNascimento}`);
         console.log(`Universidade: ${this.universidade?.buscarNome}`);
+        console.log(`Departamento: ${this.departamento?.buscarNome}`);
     };
 };
 
 // -- EXERCICIO 5 ---
+export class Departamento {
+    private nome: string;
+
+    get buscarNome() {
+        return this.nome
+    }
+
+    constructor(nome: string) {
+        this.nome = nome;
+    };
+}
