@@ -52,8 +52,6 @@ abstract class Imovel {
         this.endereco = endereco;
         this.preco = preco;        
     };
-
-    mostrarPreco(): void {}; 
 };
 
 export class ImovelNovo extends Imovel {
